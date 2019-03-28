@@ -1,0 +1,53 @@
+{
+  "name": "practical9-rdbms-starter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "RDBMS-backed version of the Simplepedia server",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js",
+    "lint": "eslint .",
+    "watch": "nodemon --ignore '*.test.js' index.js"
+  },
+  "keywords": [
+    "server",
+    "simplepedia"
+  ],
+  "author": "Your name here",
+  "contributors": [
+    "Michael Linderman <mlinderman@middlebury.edu>",
+    "Christopher Andrews <candrews@middlebury.edu>",
+    "Davin Chia <dchia@middlebury.edu>"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "db-errors": "^0.1.1",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "jest": "^24.3.1",
+    "nodemon": "^1.18.10",
+    "supertest": "^3.4.2",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  }
+}
