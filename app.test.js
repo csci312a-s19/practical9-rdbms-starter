@@ -24,7 +24,7 @@ describe('Simplepedia API', () => {
   // SuperTest has several helpful methods for conveniently testing responses
   // that we can use to make the tests more concise
 
-  test('GET /api/articles should return all movies (mostly SuperTest)', () => {
+  test('GET /api/articles should return all articles', () => {
     return request(app)
       .get('/api/articles')
       .expect(200)
