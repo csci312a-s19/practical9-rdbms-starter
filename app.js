@@ -27,8 +27,14 @@ app.get('/api/articles', (request, response, next) => {
 });
 
 app.post('/api/articles', (request, response, next) => {
-  articles[request.params.id] = request.body;
-  response.send(request.body);
+  const nextId =
+    1 +
+    Object.values(articles).reduce(
+      (maxId, article) => Math.max(maxId, article.id),
+      0
+    );
+  articles[nextId] = Object.assign({}, request.body, { id: nextId });
+  response.send(articles[nextId]);
 });
 
 app.delete('/api/articles/:id', (request, response, next) => {
